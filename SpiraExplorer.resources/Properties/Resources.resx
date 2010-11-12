@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2_bmp.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="barForeColor" xml:space="preserve">
+    <value>#FFFFA500</value>
+    <comment>Color of the Progress Bars. In #aarrggbb or Color Name "orange".</comment>
+  </data>
+  <data name="flowSelectSolution" xml:space="preserve">
+    <value>&lt;FlowDocument xmlns="clr-namespace:System.Windows.Documents;assembly=PresentationFramework"&gt;
+ &lt;Paragraph&gt;
+  &lt;Bold&gt;Select SpiraTeam Server Projects:&lt;/Bold&gt;
+ &lt;/Paragraph&gt;
+ &lt;Paragraph&gt;
+  Select SpiraTeam projects to associate with solution “%solution%”
+ &lt;/Paragraph&gt;
+&lt;/FlowDocument&gt;</value>
+    <comment>Flowdocument used when there is a solution loaded.</comment>
+  </data>
+  <data name="flowSelectNoSolution" xml:space="preserve">
+    <value>&lt;FlowDocument xmlns="clr-namespace:System.Windows.Documents;assembly=PresentationFramework"&gt;
+ &lt;Paragraph&gt;
+  &lt;Bold&gt;Add SpiraTeam Server Projects:&lt;/Bold&gt;
+ &lt;/Paragraph&gt;
+ &lt;Paragraph&gt;
+  Open a solution to enable assigning SpiraTeam projects.
+ &lt;/Paragraph&gt;
+&lt;/FlowDocument&gt;</value>
+    <comment>Flowdocument used when there are no solutions loaded.</comment>
+  </data>
+  <data name="icoLogo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Spira.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgAdd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgAdd.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgDelete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgDelete.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgEdit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgEdit.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgError" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgError.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgErrorWPF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ico_Error.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgFolder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgFolder.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgFolderIncident" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgFolderIncident.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgFolderRequirement" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgFolderRequirement.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgFolderTask" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgFolderTask.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgIncident" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgIncident.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgInfoWPF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img_Info.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgLogo.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgLogoWPF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img_Logo.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgNo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgNo.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgRefresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgRefresh.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgRequirement" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgRequirement.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgSettings" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgSettings.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgShowCompleted" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgShowCompleted.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgTask" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgTask.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgWarningWPF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ico_Warning.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mnuViewTreeBtn" xml:space="preserve">
+    <value>SpiraTeam Project Explorer</value>
+    <comment>Command button on the menu.</comment>
+  </data>
+  <data name="mnuViewTreeTip" xml:space="preserve">
+    <value>Open the SpiraTeam Project Explorer</value>
+    <comment>Statusbar or Tooltip text for the command.</comment>
+  </data>
+  <data name="strAddinProgName" xml:space="preserve">
+    <value>SpiraTeamAddin</value>
+    <comment>Used for Addin short name.</comment>
+  </data>
+  <data name="strAddinProgNamePretty" xml:space="preserve">
+    <value>SpiraTeam Visual Studio Addin</value>
+    <comment>Pretty string for the Addin Name</comment>
+  </data>
+  <data name="strAssignProjectTitle" xml:space="preserve">
+    <value>SpiraTeam Explorer Configuration</value>
+    <comment>String used for the AssignForm's title bar.</comment>
+  </data>
+  <data name="strCompany" xml:space="preserve">
+    <value>Inflectra</value>
+    <comment>Comapny name.</comment>
+  </data>
+  <data name="strIncidents" xml:space="preserve">
+    <value>Incidents</value>
+    <comment>For the TreeView - Incidents</comment>
+  </data>
+  <data name="strMenuName" xml:space="preserve">
+    <value>View</value>
+    <comment>The menu to insert the command under.</comment>
+  </data>
+  <data name="strMenuView" xml:space="preserve">
+    <value>SpiraTeam Integration</value>
+    <comment>String used in the 'View' menu.</comment>
+  </data>
+  <data name="strNewSpiraProject" xml:space="preserve">
+    <value>New SpiraTeam Project</value>
+    <comment>String used for the NewProject title bar.</comment>
+  </data>
+  <data name="strProjectTreeName" xml:space="preserve">
+    <value>SpiraTeam Project Explorer</value>
+    <comment>String used for the ProjectTree ToolWindow </comment>
+  </data>
+  <data name="strRequirements" xml:space="preserve">
+    <value>Requirements</value>
+    <comment>For the TreeView - Requirements</comment>
+  </data>
+  <data name="strSettingSectionGeneral" xml:space="preserve">
+    <value>General</value>
+    <comment>The 'General' section name in the settings file.</comment>
+  </data>
+  <data name="strTasks" xml:space="preserve">
+    <value>Tasks</value>
+    <comment>For the TreeView - Tasks</comment>
+  </data>
+  <data name="icoLogo_XP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Spira_XP.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="icoLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Spira_NoComp.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+</root>

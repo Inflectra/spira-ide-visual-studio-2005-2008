@@ -1,0 +1,307 @@
+﻿<UserControl x:Class="Inflectra.SpiraTest.IDEIntegration.VisualStudio.WPF.Forms.wpfDetailsTask"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:controls="clr-namespace:Inflectra.SpiraTest.IDEIntegration.VisualStudio.WPF.Controls"
+	xmlns:local="clr-namespace:Inflectra.SpiraTest.IDEIntegration.VisualStudio" 
+	xmlns:tk="clr-namespace:Microsoft.Windows.Controls;assembly=WPFToolkit"
+	Padding="5"
+	FontFamily="Segoe UI"
+	FontSize="10pt"
+	Width="Auto"
+	Height="Auto"
+			 
+			 >
+	<UserControl.Resources>
+		<!-- Control Backgrounds -->
+		<LinearGradientBrush x:Key="WarningControlBackground" StartPoint=".5,0" EndPoint=".5,1">
+			<GradientStop Color="LightGoldenrodYellow" Offset=".35" />
+			<GradientStop Color="Gold" Offset="1.5" />
+		</LinearGradientBrush>
+		<LinearGradientBrush x:Key="ErrorControlBackground" StartPoint=".5,0" EndPoint=".5,1">
+			<GradientStop Color="LightPink" Offset=".35" />
+			<GradientStop Color="IndianRed" Offset="1.5" />
+		</LinearGradientBrush>
+		<!-- The converter. -->
+		<local:PaddingConverter x:Key="PaddingConverter"/>
+		<!-- Display Templates -->
+		<DataTemplate x:Key="dictionaryType">
+			<StackPanel Orientation="Horizontal">
+				<TextBlock Height="Auto" Width="Auto" Text="{Binding Path=Key}" />
+				<TextBlock Height="Auto" Width="Auto" Text=" - " />
+				<TextBlock Height="Auto" Width="Auto" Text="{Binding Path=Value}" />
+			</StackPanel>
+		</DataTemplate>
+		<DataTemplate DataType="{x:Type local:Spira_ImportExport.RemoteRelease}">
+			<StackPanel Orientation="Horizontal" >
+				<TextBlock Height="Auto" Width="Auto" Text="{Binding Path=VersionNumber}" Padding="{Binding Converter={StaticResource PaddingConverter},ConverterParameter=IndentLevel}" />
+				<TextBlock Height="Auto" Width="Auto" Text=" - " />
+				<TextBlock Height="Auto" Width="Auto" Text="{Binding Path=Name}" />
+			</StackPanel>
+		</DataTemplate>
+		<DataTemplate DataType="{x:Type local:Spira_ImportExport.RemoteRequirement}">
+			<StackPanel Orientation="Horizontal" >
+				<TextBlock Height="Auto" Width="Auto" Text="{Binding Path=Name}" Padding="{Binding Converter={StaticResource PaddingConverter},ConverterParameter=IndentLevel}" />
+			</StackPanel>
+		</DataTemplate>
+		<DataTemplate DataType="{x:Type local:Spira_ImportExport.RemoteUser}">
+			<StackPanel Orientation="Horizontal" >
+				<TextBlock Height="Auto" Width="Auto" Text="{Binding Path=LastName}" />
+				<TextBlock Height="Auto" Width="Auto" Text=", " />
+				<TextBlock Height="Auto" Width="Auto" Text="{Binding Path=FirstName}" />
+			</StackPanel>
+		</DataTemplate>
+		<!-- Brushes for Backgrounds -->
+		<LinearGradientBrush x:Key="WarningMessageBackgroundBrush" StartPoint="0,0" EndPoint="1,1">
+			<GradientStop Color="LightGoldenrodYellow" Offset=".65" />
+			<GradientStop Color="Gold" Offset="1" />
+		</LinearGradientBrush>
+		<LinearGradientBrush x:Key="ErrorMessageBackgroundBrush" StartPoint="0,0" EndPoint="1,1">
+			<GradientStop Color="LightPink" Offset=".65" />
+			<GradientStop Color="Red" Offset="1" />
+		</LinearGradientBrush>
+		<LinearGradientBrush x:Key="InfoMessageBackgroundBrush" StartPoint="0,0" EndPoint="1,1">
+			<GradientStop Color="LightBlue" Offset=".65" />
+			<GradientStop Color="RoyalBlue" Offset="1" />
+		</LinearGradientBrush>
+		<LinearGradientBrush x:Key="NoMessageBackgroundBrush" StartPoint="0,0" EndPoint="1,1">
+			<GradientStop Color="#00000000" Offset="0.1" />
+			<GradientStop Color="#40000000" Offset="1" />
+		</LinearGradientBrush>
+		<!-- Styles for Controls -->
+		<Style x:Key="PaddedLabel">
+			<Setter Property="Control.Margin" Value="3" />
+			<Setter Property="Control.HorizontalAlignment" Value="Stretch" />
+			<Setter Property="TextBlock.TextAlignment" Value="Right" />
+			<Setter Property="Control.VerticalAlignment" Value="Center" />
+			<Setter Property="Control.IsTabStop" Value="False" />
+			<Setter Property="TextBlock.TextTrimming" Value="None" />
+			<Setter Property="TextBlock.TextWrapping" Value="NoWrap" />
+		</Style>
+		<Style x:Key="PaddedDropdown">
+			<Setter Property="Control.MinWidth" Value="150" />
+			<Setter Property="Control.Margin" Value="3" />
+			<Setter Property="Control.HorizontalAlignment" Value="Stretch" />
+			<Setter Property="Control.VerticalAlignment" Value="Stretch" />
+			<Style.Triggers>
+				<Trigger Property="Control.Tag" Value="1">
+					<Setter Property="Control.Background" Value="{StaticResource WarningControlBackground}" />
+				</Trigger>
+				<Trigger Property="Control.Tag" Value="2">
+					<Setter Property="Control.Background" Value="{StaticResource ErrorControlBackground}" />
+				</Trigger>
+			</Style.Triggers>
+		</Style>
+		<Style x:Key="ConcurrencyHighlight">
+			<Style.Triggers>
+				<Trigger Property="Control.Tag" Value="1">
+					<Setter Property="Control.Background" Value="{StaticResource WarningControlBackground}" />
+				</Trigger>
+				<Trigger Property="Control.Tag" Value="2">
+					<Setter Property="Control.Background" Value="{StaticResource ErrorControlBackground}" />
+				</Trigger>
+			</Style.Triggers>
+		</Style>
+	</UserControl.Resources>
+	<ScrollViewer>
+		<StackPanel Orientation="Vertical">
+			<Grid Name="panelLoading" Visibility="Visible" Background="{StaticResource InfoMessageBackgroundBrush}" HorizontalAlignment="Stretch" MinHeight="24">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="*" />
+				</Grid.RowDefinitions>
+				<Image Grid.Column="0" Grid.Row="0" Name="_bnrImgInfo" HorizontalAlignment="Left" Margin="10" VerticalAlignment="Center"  Stretch="Uniform" StretchDirection="Both" MinHeight="16" />
+				<TextBlock Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextWrapping="Wrap" Padding="2,0,2,0" Width="Auto" FontWeight="Bold" Text="Loading Task details from server, please wait..."  />
+			</Grid>
+			<Grid Name="panelLoadingError" Visibility="Collapsed" Background="{StaticResource ErrorMessageBackgroundBrush}" HorizontalAlignment="Stretch" MinHeight="24" >
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="*" />
+				</Grid.RowDefinitions>
+				<Image Grid.Column="0" Grid.Row="0" Name="_bnrImgError" HorizontalAlignment="Left" Margin="10" VerticalAlignment="Center"  Stretch="Uniform" StretchDirection="Both" MinHeight="16" />
+				<TextBlock Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextWrapping="Wrap" Padding="2,0,2,0" Width="Auto" FontWeight="Bold" Text="There was an error loading the Task from the server:"  />
+				<TextBlock Name="msgLoadingErrorMsg" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextWrapping="Wrap" Padding="2,0,2,0" Width="Auto" />
+				<TextBlock Grid.Column="1" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextWrapping="Wrap" Padding="2,0,2,0" Margin="0,3,0,10" Width="Auto" >
+					<TextBlock>Click</TextBlock>
+	                <TextBlock MouseDown="TextBlock_MouseDown" TextDecorations="Underline" Foreground="DarkBlue" Cursor="Hand">here</TextBlock>
+		            <TextBlock>to try again.</TextBlock>
+			    </TextBlock>
+			</Grid>
+			<DockPanel LastChildFill="True" Name="panelForm" >
+				<DockPanel LastChildFill="True" DockPanel.Dock="Top">
+					<Image Name="_barImgLogo" VerticalAlignment="Center" DockPanel.Dock="Right" Margin="2" Stretch="Uniform" Width="24" StretchDirection="DownOnly" />
+					<Grid DockPanel.Dock="Left">
+						<Button Name="btnSave" HorizontalContentAlignment="Center" HorizontalAlignment="Center" MinWidth="50" VerticalAlignment="Center" Click="_cntrlSave_Click" IsEnabled="False">
+							<TextBlock FontWeight="Bold">Save</TextBlock>
+						</Button>
+					</Grid>
+					<StackPanel Orientation="Vertical" Margin="3,0,3,0" VerticalAlignment="Center">
+						<Grid Name="panelWarning" Visibility="Collapsed" Background="{StaticResource WarningMessageBackgroundBrush}" HorizontalAlignment="Stretch" MouseDown="messageWarning_MouseDown" MinHeight="24" >
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="Auto" />
+								<ColumnDefinition Width="*" />
+							</Grid.ColumnDefinitions>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="*" />
+							</Grid.RowDefinitions>
+							<Image Name="_barImgWarning" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center"  Stretch="Uniform" StretchDirection="Both" Height="{Binding ElementName=msgWrnMessage,Path=ActualHeight}" MinHeight="16" />
+							<TextBlock Name="msgWrnMessage" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Padding="2,0,2,0" Width="Auto" TextTrimming="WordEllipsis" />
+						</Grid>
+						<Grid Name="panelError" Visibility="Collapsed" Background="{StaticResource ErrorMessageBackgroundBrush}"  HorizontalAlignment="Stretch" MouseDown="messageWarning_MouseDown" MinHeight="24" >
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="Auto" />
+								<ColumnDefinition Width="*" />
+							</Grid.ColumnDefinitions>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="*" />
+							</Grid.RowDefinitions>
+							<Image Name="_barImgError" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center"  Stretch="Uniform" StretchDirection="Both" Height="{Binding ElementName=msgErrMessage,Path=ActualHeight}" MinHeight="16" />
+							<TextBlock Name="msgErrMessage" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Padding="2,0,2,0" Width="Auto" TextTrimming="WordEllipsis" />
+						</Grid>
+						<Grid Name="panelInfo" Visibility="Collapsed" Background="{StaticResource InfoMessageBackgroundBrush}"  HorizontalAlignment="Stretch" MouseDown="messageWarning_MouseDown" MinHeight="24" >
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="Auto" />
+								<ColumnDefinition Width="*" />
+							</Grid.ColumnDefinitions>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="*" />
+							</Grid.RowDefinitions>
+							<Image Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center"  Stretch="Uniform" StretchDirection="Both" Height="{Binding ElementName=msgInfMessage,Path=ActualHeight}" MinHeight="16" Name="_barImgInfo" />
+							<TextBlock Name="msgInfMessage" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Padding="2,0,2,0" Width="Auto" TextTrimming="WordEllipsis" />
+						</Grid>
+						<Grid Name="panelNone" Background="{StaticResource NoMessageBackgroundBrush}"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MinHeight="24">
+						</Grid>
+					</StackPanel>
+				</DockPanel>
+				<StackPanel Orientation="Vertical">
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto" />
+							<!-- COL0: Left Labels -->
+							<ColumnDefinition Width="6*" />
+							<!-- COL1: Left Dropdowns -->
+							<ColumnDefinition Width="1*" />
+							<!-- COL2: Empty Space (Pink Floyd) -->
+							<ColumnDefinition Width="Auto" />
+							<!-- COL3: Right Labels -->
+							<ColumnDefinition Width="6*" />
+							<!-- COL4: Right Dropdowns -->
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<!-- ROW0: Incident Name -->
+							<RowDefinition Height="Auto" />
+							<!-- ROW1: Description -->
+							<RowDefinition Height="Auto" />
+							<!-- ROW2: Priority / Owner -->
+							<RowDefinition Height="Auto" />
+							<!-- ROW3: Requirement / Release -->
+							<RowDefinition Height="Auto" />
+						</Grid.RowDefinitions>
+
+						<!-- ROW0: Incident Name -->
+						<DockPanel Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" LastChildFill="True">
+							<TextBlock VerticalAlignment="Center" FontWeight="Bold" Style="{StaticResource PaddedLabel}">Task:</TextBlock>
+							<StackPanel Orientation="Horizontal" DockPanel.Dock="Right" Margin="4,0,0,0">
+								<Label Padding="0" VerticalAlignment="Center">[</Label>
+								<Label Padding="0" VerticalAlignment="Center" Name="lblItemTag" />
+								<Label Padding="0" VerticalAlignment="Center">]</Label>
+							</StackPanel>
+							<TextBox Name="cntrlName" HorizontalAlignment="Stretch" Width="Auto" Margin="3,3,0,3" VerticalAlignment="Center" TextChanged="_cntrl_TextChanged" />
+						</DockPanel>
+						<!-- ROW1: Description -->
+						<GroupBox Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="5" Name="grpDescription" Style="{StaticResource ConcurrencyHighlight}">
+							<GroupBox.Header>
+								<TextBlock FontWeight="Bold">Description:</TextBlock>
+							</GroupBox.Header>
+							<GroupBox.Content>
+								<controls:wpfRichHTMLText x:Name="cntrlDescription" Height="200" Width="Auto" TextChanged="_cntrl_TextChanged" IsSpellcheckEnabled="True" />
+							</GroupBox.Content>
+						</GroupBox>
+						<!-- ROW2: Priority / Owner -->
+						<TextBlock Grid.Column="0" Grid.Row="2" Style="{StaticResource PaddedLabel}">Priority:</TextBlock>
+						<ComboBox Grid.Column="1" Grid.Row="2" Name="cntrlPriority" Style="{StaticResource PaddedDropdown}" SelectionChanged="cntrl_SelectionChanged" ItemTemplate="{StaticResource dictionaryType}" />
+						<TextBlock Grid.Column="3" Grid.Row="2" Style="{StaticResource PaddedLabel}">Owner:</TextBlock>
+						<ComboBox Grid.Column="4" Grid.Row="2" Name="cntrlOwnedBy" Style="{StaticResource PaddedDropdown}" SelectionChanged="cntrl_SelectionChanged" />
+						<!-- ROW3: Requirement / Release -->
+						<TextBlock Grid.Column="0" Grid.Row="3" Style="{StaticResource PaddedLabel}">Requirement:</TextBlock>
+						<ComboBox Grid.Column="1" Grid.Row="3" Name="cntrlRequirement" Style="{StaticResource PaddedDropdown}" SelectionChanged="cntrl_SelectionChanged" IsReadOnly="True"  />
+						<TextBlock Grid.Column="3" Grid.Row="3" Style="{StaticResource PaddedLabel}">Release:</TextBlock>
+						<ComboBox Grid.Column="4" Grid.Row="3" Name="cntrlRelease" Style="{StaticResource PaddedDropdown}" SelectionChanged="cntrl_SelectionChanged" />
+					</Grid>
+					<TabControl>
+						<TabItem>
+							<TabItem.Header>
+								Schedule
+							</TabItem.Header>
+							<TabItem.Content>
+								<Grid HorizontalAlignment="Stretch">
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width="Auto" />
+										<!-- COL0: Left Labels -->
+										<ColumnDefinition Width="6*" />
+										<!-- COL1: Left Dropdowns -->
+										<ColumnDefinition Width="1*" />
+										<!-- COL2: Empty Spaces (Pink Floyd) -->
+										<ColumnDefinition Width="Auto" />
+										<!-- COL3: Right Labels -->
+										<ColumnDefinition Width="6*" />
+										<!-- COL4: Right Dropdowns -->
+									</Grid.ColumnDefinitions>
+									<Grid.RowDefinitions>
+										<RowDefinition Height="Auto" />
+										<!-- ROW0: Start Date / Closed On -->
+										<RowDefinition Height="Auto" />
+										<!-- ROW1: Start Date / Closed On -->
+										<RowDefinition Height="Auto" />
+										<!-- ROW2: % Complete / Est. Effort -->
+									</Grid.RowDefinitions>
+									<!-- ROW0: Start Date / End Date -->
+									<TextBlock Grid.Column="0" Grid.Row="0" Style="{StaticResource PaddedLabel}">Status:</TextBlock>
+									<ComboBox Grid.Column="1" Grid.Row="0" Name="cntrlStatus" Style="{StaticResource PaddedDropdown}" SelectionChanged="cntrl_SelectionChanged" ItemTemplate="{StaticResource dictionaryType}" />
+									<TextBlock Grid.Column="3" Grid.Row="0" Style="{StaticResource PaddedLabel}">% Complete:</TextBlock>
+									<StackPanel Grid.Column="4" Grid.Row="0" Orientation="Horizontal">
+										<TextBox MaxLength="3" Name="cntrlPerComplete" Style="{StaticResource PaddedDropdown}" Width="30" MinWidth="0" LostFocus="_cntrl_LostFocus" PreviewTextInput="_cntrl_PreviewTextInput" TextChanged="_cntrl_TextChanged" />
+										<TextBlock Style="{StaticResource PaddedLabel}" FontWeight="Bold">%</TextBlock>
+									</StackPanel>
+									<!-- ROW0: Start Date / End Date -->
+									<TextBlock Grid.Column="0" Grid.Row="1" Style="{StaticResource PaddedLabel}">Start Date:</TextBlock>
+									<tk:DatePicker Grid.Column="1" Grid.Row="1" Name="cntrlStartDate" IsTodayHighlighted="True" SelectedDateFormat="Short" Style="{StaticResource PaddedDropdown}" Height="Auto" SelectedDateChanged="cntrlDate_SelectedDateChanged" />
+									<TextBlock Grid.Column="3" Grid.Row="1" Style="{StaticResource PaddedLabel}">End Date:</TextBlock>
+									<tk:DatePicker Grid.Column="4" Grid.Row="1" Name="cntrlEndDate" IsTodayHighlighted="True" SelectedDateFormat="Short" Style="{StaticResource PaddedDropdown}" Height="Auto" SelectedDateChanged="cntrlDate_SelectedDateChanged" />
+									<!-- ROW1: % Complete / Est. Effort -->
+									<TextBlock Grid.Column="0" Grid.Row="2" Style="{StaticResource PaddedLabel}">Estimated Effort:</TextBlock>
+									<StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal">
+										<TextBox MaxLength="3" Name="cntrlEstEffortH" Style="{StaticResource PaddedDropdown}" Width="30" MinWidth="0" LostFocus="_cntrl_LostFocus" PreviewTextInput="_cntrl_PreviewTextInput" TextChanged="_cntrl_TextChanged" />
+										<TextBlock Style="{StaticResource PaddedLabel}">hours,</TextBlock>
+										<TextBox MaxLength="2" Name="cntrlEstEffortM" Style="{StaticResource PaddedDropdown}" Width="30" MinWidth="0" LostFocus="_cntrl_LostFocus" PreviewTextInput="_cntrl_PreviewTextInput" TextChanged="_cntrl_TextChanged" />
+										<TextBlock Style="{StaticResource PaddedLabel}">minutes</TextBlock>
+									</StackPanel>
+									<!-- ROW2: Actual Effort -->
+									<TextBlock Grid.Column="3" Grid.Row="2" Style="{StaticResource PaddedLabel}">Actual Effort:</TextBlock>
+									<StackPanel Grid.Column="4" Grid.Row="2" Orientation="Horizontal">
+										<TextBox MaxLength="3" Name="cntrlActEffortH" Style="{StaticResource PaddedDropdown}" Width="30" MinWidth="0" LostFocus="_cntrl_LostFocus" PreviewTextInput="_cntrl_PreviewTextInput" TextChanged="_cntrl_TextChanged"/>
+										<TextBlock Style="{StaticResource PaddedLabel}">hours,</TextBlock>
+										<TextBox MaxLength="2" Name="cntrlActEffortM" Style="{StaticResource PaddedDropdown}" Width="30" MinWidth="0" LostFocus="_cntrl_LostFocus" PreviewTextInput="_cntrl_PreviewTextInput" TextChanged="_cntrl_TextChanged" />
+										<TextBlock Style="{StaticResource PaddedLabel}">minutes</TextBlock>
+									</StackPanel>
+								</Grid>
+							</TabItem.Content>
+						</TabItem>
+						<TabItem Visibility="Collapsed">
+							<TabItem.Header>
+								Custom Properties
+							</TabItem.Header>
+						</TabItem>
+					</TabControl>
+				</StackPanel>
+			</DockPanel>
+		</StackPanel>
+	</ScrollViewer>
+</UserControl>

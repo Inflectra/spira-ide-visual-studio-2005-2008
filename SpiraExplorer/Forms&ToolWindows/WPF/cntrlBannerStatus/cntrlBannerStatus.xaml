@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="Inflectra.SpiraTest.IDEIntegration.VisualStudio.Forms_ToolWindows.WPF.cntrlBannerStatus"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+	<UserControl.Resources>
+		<!-- Brushes -->
+		<LinearGradientBrush x:Key="WarningMessageBackgroundBrush" StartPoint="0,0" EndPoint="1,1">
+			<GradientStop Color="LightGoldenrodYellow" Offset=".65" />
+			<GradientStop Color="Gold" Offset="1" />
+		</LinearGradientBrush>
+		<LinearGradientBrush x:Key="ErrorMessageBackgroundBrush" StartPoint="0,0" EndPoint="1,1">
+			<GradientStop Color="LightPink" Offset=".65" />
+			<GradientStop Color="Red" Offset="1" />
+		</LinearGradientBrush>
+		<LinearGradientBrush x:Key="InfoMessageBackgroundBrush" StartPoint="0,0" EndPoint="1,1">
+			<GradientStop Color="LightBlue" Offset=".65" />
+			<GradientStop Color="RoyalBlue" Offset="1" />
+		</LinearGradientBrush>
+		<LinearGradientBrush x:Key="NoMessageBackgroundBrush" StartPoint="0,0" EndPoint="1,1">
+			<GradientStop Color="#00000000" Offset="0.1" />
+			<GradientStop Color="#40000000" Offset="1" />
+		</LinearGradientBrush>
+		<!-- Images -->
+		<BitmapImage x:Key="imgError" UriSource="/SpiraExplorer;component/Forms%26ToolWindows/WPF/cntrlBannerStatus/_resources/ico_Error.png" />
+		<BitmapImage x:Key="imgWarning" UriSource="/SpiraExplorer;component/Forms%26ToolWindows/WPF/cntrlBannerStatus/_resources/ico_Warning.png" />
+		<BitmapImage x:Key="imgInfo" UriSource="/SpiraExplorer;component/Forms%26ToolWindows/WPF/cntrlBannerStatus/_resources/ico_Info.png" />
+	</UserControl.Resources>
+
+	<Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+		<!-- Error Panel -->
+		<Grid Name="panelError" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="{StaticResource ResourceKey=ErrorMessageBackgroundBrush}">
+			<StackPanel Orientation="Horizontal">
+				<Image Source="{StaticResource ResourceKey=imgError}" MinHeight="16" Height="{Binding ElementName=txtError,Path=ActualHeight,FallbackValue=Height}" />
+				<TextBlock Name="txtError" HorizontalAlignment="Stretch" VerticalAlignment="Top" />
+			</StackPanel>
+		</Grid>
+		<Grid Name="panelWarning" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="{StaticResource ResourceKey=WarningMessageBackgroundBrush}">
+			<StackPanel Orientation="Horizontal">
+				<Image Source="{StaticResource ResourceKey=imgWarning}" MinHeight="16" Height="{Binding ElementName=txtWarning,Path=ActualHeight,FallbackValue=Height}" />
+				<TextBlock Name="txtWarning" HorizontalAlignment="Stretch" VerticalAlignment="Top" />
+			</StackPanel>
+		</Grid>
+		<Grid Name="panelInfo" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="{StaticResource ResourceKey=InfoMessageBackgroundBrush}">
+			<StackPanel Orientation="Horizontal" Grid.ColumnSpan="2">
+				<Image Source="{StaticResource ResourceKey=imgInfo}" MinHeight="16" Height="{Binding ElementName=txtInfo,Path=ActualHeight,FallbackValue=Height}" />
+				<TextBlock Name="txtInfo" HorizontalAlignment="Stretch" VerticalAlignment="Top" />
+			</StackPanel>
+		</Grid>
+		<Grid Name="panelNone" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="{StaticResource ResourceKey=NoMessageBackgroundBrush}">
+			<!-- No content. -->
+		</Grid>
+	</Grid>
+</UserControl>

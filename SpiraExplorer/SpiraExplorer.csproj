@@ -1,0 +1,512 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1EE7E97B-10B7-4399-80C4-295ED2F958EA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <StartupObject>
+    </StartupObject>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>SpiraExplorer</AssemblyName>
+    <RootNamespace>Inflectra.SpiraTest.IDEIntegration.VisualStudio</RootNamespace>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>SpiraExplorer.snk</AssemblyOriginatorKeyFile>
+    <ApplicationIcon>Resources\Spira.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <IncrementalBuild>false</IncrementalBuild>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>
+    </DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <IncrementalBuild>false</IncrementalBuild>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <Optimize>true</Optimize>
+    <PlatformTarget>x86</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Extensibility, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsFormsIntegration">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WPFToolkit, Version=3.5.50211.1, Culture=neutral, PublicKeyToken=d918ac98f0eb7a44, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\WPFToolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Connect - Interface Members.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Connect - Event Handlers.cs" />
+    <Compile Include="Connect - Private Vars.cs" />
+    <Compile Include="Connect - Form Creation.cs" />
+    <None Include="Forms&amp;ToolWindows\WPF\cntrlBannerStatus\cntrlBannerStatus.xaml.cs">
+      <DependentUpon>cntrlBannerStatus.xaml</DependentUpon>
+    </None>
+    <Compile Include="Forms&amp;ToolWindows\WPF\ColorPicker\ColorPicker.cs" />
+    <Compile Include="Forms&amp;ToolWindows\WPF\ColorPicker\wpfColorPickerDialog.xaml.cs">
+      <DependentUpon>wpfColorPickerDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms&amp;ToolWindows\WPF\ColorPicker\SupportingClasses.cs" />
+    <Compile Include="Controls\wpfRichHTMLText\wpfRichHTMLText.xaml.cs">
+      <DependentUpon>wpfRichHTMLText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Connect - Static Members.cs" />
+    <Compile Include="Forms&amp;ToolWindows\WinForms\ucDetailsRequirement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms&amp;ToolWindows\WinForms\ucDetailsRequirement.Designer.cs">
+      <DependentUpon>ucDetailsRequirement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms&amp;ToolWindows\WPF\AssignServerProject\wpfAssignProject.xaml - FlowUp.cs" />
+    <Compile Include="Forms&amp;ToolWindows\WPF\Details_Requirement\wpfDetailsRequirement - LoadItem.cs" />
+    <Compile Include="Forms&amp;ToolWindows\WPF\Details_Requirement\wpfDetailsRequirement.xaml.cs">
+      <DependentUpon>wpfDetailsRequirement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms&amp;ToolWindows\WPF\Details_Incident\LoadItem_Concurrency.cs" />
+    <Compile Include="Forms&amp;ToolWindows\WPF\Details_Incident\LoadItem.cs" />
+    <Compile Include="Forms&amp;ToolWindows\WinForms\ucDetailsIncident.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms&amp;ToolWindows\WinForms\ucDetailsIncident.Designer.cs">
+      <DependentUpon>ucDetailsIncident.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms&amp;ToolWindows\WPF\Details_Incident\wpfDetailsIncident.xaml.cs">
+      <DependentUpon>wpfDetailsIncident.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\wpfDiscussionFrame\wpfDiscussionFrame.xaml.cs">
+      <DependentUpon>wpfDiscussionFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms&amp;ToolWindows\WPF\Details_Task\wpfDetailsTask - UpdateItem.cs" />
+    <Compile Include="Forms&amp;ToolWindows\WPF\Details_Task\wpfDetailsTask - LoadItem.cs" />
+    <Compile Include="Forms&amp;ToolWindows\WinForms\ucDetailsTask.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms&amp;ToolWindows\WinForms\ucDetailsTask.Designer.cs">
+      <DependentUpon>ucDetailsTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms&amp;ToolWindows\WPF\Details_Task\wpfDetailsTask.xaml.cs">
+      <DependentUpon>wpfDetailsTask.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms&amp;ToolWindows\WPF\InsertLink\AnchorDialogue.xaml.cs">
+      <DependentUpon>AnchorDialogue.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms&amp;ToolWindows\WPF\ServerProjectDetails\wpfNewSpiraProject.xaml.cs">
+      <DependentUpon>wpfNewSpiraProject.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms&amp;ToolWindows\WPF\ProjectTree\wpfProjectTree.xaml - Node Functions.cs" />
+    <Compile Include="Forms&amp;ToolWindows\WPF\ProjectTree\wpfProjectTree.xaml - FlowUp Functions.cs" />
+    <Compile Include="Forms&amp;ToolWindows\WPF\ProjectTree\wpfProjectTree.xaml - Populate Tree.cs" />
+    <Compile Include="Forms&amp;ToolWindows\WPF\ProjectTree\wpfProjectTree.xaml.cs">
+      <DependentUpon>wpfProjectTree.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms&amp;ToolWindows\WinForms\ucProjectTree.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms&amp;ToolWindows\WinForms\ucProjectTree.Designer.cs">
+      <DependentUpon>ucProjectTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms&amp;ToolWindows\WPF\AssignServerProject\wpfAssignProject.xaml.cs">
+      <DependentUpon>wpfAssignProject.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\wpfRichHTMLText\HTMLConverter\HTMLCssParser.cs" />
+    <Compile Include="Controls\wpfRichHTMLText\HTMLConverter\HTMLFromXAMLConverter.cs" />
+    <Compile Include="Controls\wpfRichHTMLText\HTMLConverter\HTMLLexicAlanalyzer.cs" />
+    <Compile Include="Controls\wpfRichHTMLText\HTMLConverter\HTMLParser.cs" />
+    <Compile Include="Controls\wpfRichHTMLText\HTMLConverter\HTMLSchema.cs" />
+    <Compile Include="Controls\wpfRichHTMLText\HTMLConverter\HTMLTokenType.cs" />
+    <Compile Include="Controls\wpfRichHTMLText\HTMLConverter\HTMLToXAMLConverter.cs" />
+    <Compile Include="Helper Classes\IniFileReader.cs" />
+    <Compile Include="Helper Classes\SpiraProject.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\CommandBar.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommandBar.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\Spira_ImportExport\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms&amp;ToolWindows\WinForms\ucDetailsRequirement.resx">
+      <DependentUpon>ucDetailsRequirement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms&amp;ToolWindows\WinForms\ucDetailsIncident.resx">
+      <DependentUpon>ucDetailsIncident.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms&amp;ToolWindows\WinForms\ucDetailsTask.resx">
+      <DependentUpon>ucDetailsTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms&amp;ToolWindows\WinForms\ucProjectTree.resx">
+      <DependentUpon>ucProjectTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CommandBar.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CommandBar.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="EnvDTE">
+      <Guid>{80CC9F66-E7D8-4DDD-85B6-D9E6CD0E93E2}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="EnvDTE80">
+      <Guid>{1A31287A-4D7D-413E-8E32-3B374931BD89}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="EnvDTE90">
+      <Guid>{2CE2370E-D744-4936-A090-3FFFE667B0E1}</Guid>
+      <VersionMajor>9</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="Microsoft.VisualStudio.CommandBars">
+      <Guid>{1CBA492E-7263-47BB-87FE-639000619B15}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\..\..\..\..\Users\mike\Documents\Visual Studio 2008\Addins\Spira_VSIDE - For Testing.AddIn">
+      <Link>Spira_VSIDE - For Testing.AddIn</Link>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="SpiraExplorer.snk" />
+    <None Include="Web References\Spira_ImportExport\ImportExport.wsdl" />
+    <None Include="Web References\Spira_ImportExport\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\Spira_ImportExport\RemoteCustomList1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Spira_ImportExport\RemoteCustomListValue1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Spira_ImportExport\RemoteCustomProperty1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Spira_ImportExport\RemoteDataMapping1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Spira_ImportExport\RemoteDocument1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Spira_ImportExport\RemoteIncident1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Spira_ImportExport\RemoteIncidentPriority1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Spira_ImportExport\RemoteIncidentResolution1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Spira_ImportExport\RemoteIncidentSeverity1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Spira_ImportExport\RemoteIncidentStatus1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Spira_ImportExport\RemoteIncidentType1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Spira_ImportExport\RemoteProject1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Spira_ImportExport\RemoteProjectCustomProperty1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Spira_ImportExport\RemoteProjectRole1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Spira_ImportExport\RemoteProjectUser1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Spira_ImportExport\RemoteRelease1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Spira_ImportExport\RemoteRequirement1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Spira_ImportExport\RemoteSetting1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Spira_ImportExport\RemoteTask1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Spira_ImportExport\RemoteTestCase1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Spira_ImportExport\RemoteTestCaseParameter1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Spira_ImportExport\RemoteTestRun1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Spira_ImportExport\RemoteTestSet1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Spira_ImportExport\RemoteTestStep1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Spira_ImportExport\RemoteUser1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Spira_ImportExport\RemoteVersion1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Spira_ImportExport\RemoteWorkflowIncidentFields1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Spira_ImportExport\RemoteWorkflowIncidentTransition1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <Resource Include="Controls\wpfRichHTMLText\Resources\img_bold.png" />
+    <Resource Include="Controls\wpfRichHTMLText\Resources\img_italic.png" />
+    <Resource Include="Controls\wpfRichHTMLText\Resources\img_listbullet.png" />
+    <Resource Include="Controls\wpfRichHTMLText\Resources\img_listnumber.png" />
+    <Resource Include="Controls\wpfRichHTMLText\Resources\img_underline.png" />
+    <Resource Include="Controls\wpfRichHTMLText\Resources\img_justcenter.png" />
+    <Resource Include="Controls\wpfRichHTMLText\Resources\img_justleft.png" />
+    <Resource Include="Controls\wpfRichHTMLText\Resources\img_justright.png" />
+    <Resource Include="Controls\wpfRichHTMLText\Resources\img_indent.png" />
+    <Resource Include="Controls\wpfRichHTMLText\Resources\img_outdent.png" />
+    <Resource Include="Controls\wpfRichHTMLText\Resources\img_font.png" />
+    <Resource Include="Controls\wpfRichHTMLText\Resources\img_fontsize.png" />
+    <Resource Include="Controls\wpfRichHTMLText\Resources\img_fontcolor.png" />
+    <Resource Include="Controls\wpfRichHTMLText\Resources\img_fonthighlight.png" />
+    <Resource Include="Controls\wpfRichHTMLText\Resources\img_link.png" />
+    <Resource Include="Resources\Spira.ico" />
+    <Resource Include="Forms&amp;ToolWindows\WPF\_resources\Spira.ico" />
+    <Resource Include="Forms&amp;ToolWindows\WPF\cntrlBannerStatus\_resources\ico_Error.png" />
+    <Resource Include="Forms&amp;ToolWindows\WPF\cntrlBannerStatus\_resources\ico_Warning.png" />
+    <Resource Include="Forms&amp;ToolWindows\WPF\cntrlBannerStatus\_resources\ico_Info.png" />
+    <Content Include="SpiraTeam Explorer.AddIn">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Forms&amp;ToolWindows\WPF\cntrlBannerStatus\cntrlBannerStatus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <Page Include="Forms&amp;ToolWindows\WPF\ColorPicker\wpfColorPickerDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\wpfRichHTMLText\wpfRichHTMLText.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms&amp;ToolWindows\WPF\Details_Requirement\wpfDetailsRequirement.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms&amp;ToolWindows\WPF\Details_Incident\wpfDetailsIncident.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\wpfDiscussionFrame\wpfDiscussionFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms&amp;ToolWindows\WPF\Details_Task\wpfDetailsTask.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms&amp;ToolWindows\WPF\InsertLink\AnchorDialogue.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms&amp;ToolWindows\WPF\ServerProjectDetails\wpfNewSpiraProject.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms&amp;ToolWindows\WPF\ProjectTree\wpfProjectTree.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms&amp;ToolWindows\WPF\AssignServerProject\wpfAssignProject.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost/Spira/Services/v2_2/ImportExport.asmx%3fWSDL">
+      <UrlBehavior>Static</UrlBehavior>
+      <RelPath>Web References\Spira_ImportExport\</RelPath>
+      <UpdateFromURL>http://localhost/Spira/Services/v2_2/ImportExport.asmx%3fWSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Project1_Spira_ImportExport_ImportExport</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSHARP.Targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>rem "$(ProjectDir)..\makeUIIcon.cmd" "$(ProjectDir)" "$(TargetDir)"
+</PostBuildEvent>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
