@@ -13,7 +13,7 @@
 // 
 #pragma warning disable 1591
 
-namespace Inflectra.SpiraTest.IDEIntegration.VisualStudio.Spira_ImportExport {
+namespace Inflectra.SpiraTest.IDEIntegration.VisualStudio2008.Spira_ImportExport {
     using System;
     using System.Web.Services;
     using System.Diagnostics;

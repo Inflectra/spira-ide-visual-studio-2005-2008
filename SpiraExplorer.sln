@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpiraExplorer", "SpiraExplorer\SpiraExplorer.csproj", "{1EE7E97B-10B7-4399-80C4-295ED2F958EA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpiraExplorer2008", "SpiraExplorer\SpiraExplorer.csproj", "{1EE7E97B-10B7-4399-80C4-295ED2F958EA}"
 	ProjectSection(ProjectDependencies) = postProject
 		{87F40C72-2AA5-4011-BAB2-29C6AD5C5B45} = {87F40C72-2AA5-4011-BAB2-29C6AD5C5B45}
 	EndProjectSection

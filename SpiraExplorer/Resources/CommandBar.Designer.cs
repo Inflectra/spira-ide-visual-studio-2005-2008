@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Inflectra.SpiraTest.IDEIntegration.VisualStudio.Resources {
+namespace Inflectra.SpiraTest.IDEIntegration.VisualStudio2008.Resources {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Inflectra.SpiraTest.IDEIntegration.VisualStudio.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Inflectra.SpiraTest.IDEIntegration.VisualStudio.Resources.CommandBar", typeof(CommandBar).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Inflectra.SpiraTest.IDEIntegration.VisualStudio2008.Resources.CommandBar", typeof(CommandBar).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

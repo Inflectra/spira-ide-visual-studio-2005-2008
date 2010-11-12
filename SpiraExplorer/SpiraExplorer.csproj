@@ -11,7 +11,7 @@
     </StartupObject>
     <NoStandardLibraries>false</NoStandardLibraries>
     <AssemblyName>SpiraExplorer</AssemblyName>
-    <RootNamespace>Inflectra.SpiraTest.IDEIntegration.VisualStudio</RootNamespace>
+    <RootNamespace>Inflectra.SpiraTest.IDEIntegration.VisualStudio2008</RootNamespace>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>SpiraExplorer.snk</AssemblyOriginatorKeyFile>

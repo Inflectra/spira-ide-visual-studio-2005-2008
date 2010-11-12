@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Inflectra.SpiraTest.IDEIntegration.VisualStudio.Properties {
+namespace Inflectra.SpiraTest.IDEIntegration.VisualStudio2008.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
